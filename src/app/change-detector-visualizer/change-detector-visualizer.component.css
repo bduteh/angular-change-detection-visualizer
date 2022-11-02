@@ -1,0 +1,46 @@
+:host {
+  position: relative;
+}
+
+:host .body {
+  display: block;
+  border: solid grey 2px;
+
+  margin: 8px;
+  padding: 8px;
+}
+
+:host.highlight .body {
+  border: solid red 2px;
+}
+
+:host.highlight::before {
+  border: solid red 1px;
+}
+
+:host::before {
+  content: '';
+  display: block;
+  border: 1px grey solid;
+  width: 0px;
+  height: 16px;
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+:host::after {
+  display: block;
+  content: attr(data-change-detections-cycles);
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 16px;
+}
+
+.children {
+  display: flex;
+}
